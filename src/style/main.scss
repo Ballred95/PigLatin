@@ -19,6 +19,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
+    background-color: rgb(245, 245, 245);
 }
 
 .app {
@@ -29,4 +30,9 @@ body {
 
 .piggy {
     margin-top: 300px;
+    margin-right: 50px;
+}
+
+textarea {
+    
 }
