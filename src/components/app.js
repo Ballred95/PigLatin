@@ -1,4 +1,4 @@
-import React, { useState } from 'react' 
+import React, { useState, useEffect } from 'react' 
 import Paper from './paper'
 import Piggy from './piggy'
 
@@ -7,6 +7,7 @@ export default function App(props) {
 
   const [value, setValue] = useState('')
   const [pigLatin, setPigLatin] = useState('')
+  const [animate, setAnimate] = useState('')
   
   function handleChange(e) {
     setValue(e.target.value)
@@ -30,10 +31,14 @@ export default function App(props) {
     setPigLatin(raw.join(' ')) 
   
   }
-
+  useEffect(() => {
+    setAnimate("animate__animated animate__shakeY")
+  }, [animate])
 
   function handleClick() {
     input(value)
+    animate === "animate__animated animate__shakeY" ? setAnimate('') : setAnimate("animate__animated animate__shakeY")
+    
   }
 
 
@@ -41,8 +46,10 @@ export default function App(props) {
      
    <div className='app'>
        <Paper userInput={<textarea value={value} onChange={handleChange} />} handleClick={handleClick}/>
+        <div className="piggy-flex">
        <Piggy />
-       {pigLatin}
+       <h1 className={animate} >{pigLatin}</h1>
+       </div>
    </div>
    )
 }
