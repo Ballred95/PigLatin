@@ -7,7 +7,7 @@ export default function Paper(props) {
  
    <div className='paper'>
        {props.userInput}
-       <button onClick={props.handleClick}>Click</button>
+       <button onClick={props.handleClick}>Translate</button>
        
    </div>
    )
